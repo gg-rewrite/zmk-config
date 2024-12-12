@@ -1,0 +1,16 @@
+if SHIELD_MAGPIE_5_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "magpie-5"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_MAGPIE_5_LEFT
+
+if SHIELD_MAGPIE_5_LEFT || SHIELD_MAGPIE_5_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_MAGPIE_5_LEFT || SHIELD_MAGPIE_5_RIGHT

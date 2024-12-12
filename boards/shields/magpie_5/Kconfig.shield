@@ -1,0 +1,5 @@
+config SHIELD_MAGPIE_5_LEFT
+    def_bool $(shields_list_contains,magpie_5_left)
+
+config SHIELD_MAGPIE_5_RIGHT
+    def_bool $(shields_list_contains,magpie_5_right)

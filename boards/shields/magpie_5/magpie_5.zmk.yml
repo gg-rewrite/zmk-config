@@ -1,0 +1,18 @@
+# This file was generated from a template. Edit it to match your keyboard.
+# See https://zmk.dev/docs/development/hardware-integration/hardware-metadata-files
+# for instructions.
+
+file_format: "1"
+id: magpie_5
+name: magpie-5
+type: shield
+url: https://example.com
+features:
+  - keys
+  - pointer
+  - encoder
+requires:
+  - pro_micro
+siblings:
+  - magpie_5_left
+  - magpie_5_right
