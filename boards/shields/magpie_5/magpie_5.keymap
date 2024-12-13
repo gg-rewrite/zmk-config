@@ -25,10 +25,6 @@
 / {
 chosen { zmk,matrix_transform = &five_column_transform; };
 
-	#include "combos.dtsi"
-
-	// Define a default keymap here.
-	// See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
 	keymap {
 		compatible = "zmk,keymap";
 
