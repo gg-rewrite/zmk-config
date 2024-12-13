@@ -48,7 +48,9 @@ chosen { zmk,matrix_transform = &five_column_transform; };
                 &trans &trans &trans  &trans  &trans  &trans    &trans &trans  &trans  &trans  &trans  &trans
                 &trans &trans &trans  &trans  &trans  &trans    &trans &trans  &trans  &trans  &trans  &trans
             >;
-        };
+		};
+	};
+};
 		/* NuFu { */
 		/* 	label = "NuFu"; */
 		/* 	bindings = < */
