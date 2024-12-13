@@ -1,16 +1,16 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/mouse.h>
 
-/ {
-	behaviors {
-		inc_dec_mwh: behavior_sensor_rotate_mouse_wheel {
-			compatible = "zmk,behavior-sensor-rotate-var";
-			label = "ENC_MOUSE_WHEEL";
-			#sensor-binding-cells = <2>;
-         		bindings = <&mwh>, <&mwh>;
-		};
-	};
-};
+/* / { */
+/* 	behaviors { */
+/* 		inc_dec_mwh: behavior_sensor_rotate_mouse_wheel { */
+/* 			compatible = "zmk,behavior-sensor-rotate-var"; */
+/* 			label = "ENC_MOUSE_WHEEL"; */
+/* 			#sensor-binding-cells = <2>; */
+/*          		bindings = <&mwh>, <&mwh>; */
+/* 		}; */
+/* 	}; */
+/* }; */
 
 / {
 	chosen {
