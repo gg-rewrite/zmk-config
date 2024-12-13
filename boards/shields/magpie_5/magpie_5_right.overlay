@@ -27,7 +27,7 @@
 	
 &right_encoder {
 	status = "okay";
-}
+};
 
 &kscan {
     col-gpios
