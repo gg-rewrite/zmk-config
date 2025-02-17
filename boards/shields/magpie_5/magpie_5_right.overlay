@@ -9,21 +9,6 @@
     // Set this to the number of columns on the left side.
     col-offset = <7>;
 };
-
-/ {
-	right_encoder: encoder_right {
-	compatible = "alps,ec11";
-	a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-	b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-	status = "okay";
-	};
-
-	sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&right_encoder>;
-        triggers-per-rotation = <20>;
-	};
-};
 	
 &right_encoder {
 	status = "okay";
