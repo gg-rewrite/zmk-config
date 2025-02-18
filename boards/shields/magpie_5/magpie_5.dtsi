@@ -1,5 +1,4 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#define ZMK_MOUSE_SCRL_VAL 140
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
 
@@ -14,14 +13,14 @@
 		compatible = "alps,ec11";
 		a-gpios = <&gpio0 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		steps = <18>; 
+		steps = <96>; 
 		status = "disabled";
 	};
 
 	sensors: sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&right_encoder>;
-		triggers-per-rotation = <9>;
+		triggers-per-rotation = <24>;
 	};
 	
 	vbatt: vbatt {
