@@ -1,4 +1,4 @@
-if SHIELD_MAGPIE_5_LEFT
+if SHIELD_MAGPIE_5_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "magpie-5"
