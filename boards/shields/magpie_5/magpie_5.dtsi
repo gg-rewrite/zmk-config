@@ -15,6 +15,7 @@
 		b-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		steps = <96>; 
 		status = "disabled";
+		/* resolution = <2>; */
 	};
 
 	sensors: sensors {

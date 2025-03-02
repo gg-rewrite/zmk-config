@@ -29,6 +29,10 @@
 	delay-ms = <0>;                   // 10
 };
 
+&soft_off {
+	hold-time-ms = <2000>; // Only turn off it the key is held for 2 seconds or longer.
+};
+
 / {
 	behaviors {
 		scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
@@ -44,11 +48,11 @@
 
 		Base {
 			bindings = <
-			&none &kp  ESC   &kp N1   &kp N2    &kp N3   &kp N4   &kp N5      &mkp LCLK  &kp N6        &kp N7   &kp N8    &kp N9    &kp  N0        &kp  BACKSPACE
-			&none &kp  TAB   &kp Q    &kp W     &kp E    &kp R    &kp T       &mkp RCLK  &kp Y         &kp U    &kp I     &kp O     &kp  P         &kp  BSLH
-			&none &kp  LSHFT &kp A    &kp S     &kp D    &kp F    &kp G       &mkp MCLK  &kp H         &kp J    &kp K     &kp L     &kp  SEMICOLON &kp  APOS
-			&none &kp  LCTRL &kp Z    &kp X     &kp C    &kp V    &kp B       &tog MACRO &kp N         &kp M    &kp COMMA &kp DOT   &kp  SLASH     &kp  ENTER
-			&none &tog NAV   &kp CAPS &kp GRAVE &kp LALT &sk LGUI &kp SPACE   &none      &lt NUFU RALT &kp LBKT &kp RBKT  &kp TILDE &mo NAV       &tog MACRO
+			&none &kp  ESC   &kp N1   &kp N2    &kp N3   &kp N4   &kp N5      &mkp LCLK  &kp N6        &kp N7   &kp N8    &kp N9    &kp N0        &kp BACKSPACE
+			&none &kp  TAB   &kp Q    &kp W     &kp E    &kp R    &kp T       &mkp RCLK  &kp Y         &kp U    &kp I     &kp O     &kp P         &kp BSLH
+			&none &kp  LSHFT &kp A    &kp S     &kp D    &kp F    &kp G       &mkp MCLK  &kp H         &kp J    &kp K     &kp L     &kp SEMICOLON &kp APOS
+			&none &kp  LCTRL &kp Z    &kp X     &kp C    &kp V    &kp B       &tog MACRO &kp N         &kp M    &kp COMMA &kp DOT   &kp SLASH     &kp ENTER
+			&none &tog NAV   &kp CAPS &kp GRAVE &kp LALT &sk LGUI &kp SPACE   &none      &lt NUFU RALT &kp LBKT &kp RBKT  &kp TILDE &mo NAV       &soft_off
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
 		};
@@ -65,9 +69,9 @@
 		
 		Nav {
 			bindings = <
-			&none &kp C_BRI_UP &trans     &trans   &trans        &trans     &trans       &trans &trans &trans &trans &trans &trans &trans
-			&none &kp C_BRI_DN &kp HOME   &kp UP   &kp PAGE_UP   &trans     &trans       &trans &trans &trans &trans &trans &trans &trans
-			&none &kp VOLU     &kp LEFT   &kp DOWN &kp RIGHT     &trans     &trans       &trans &trans &trans &trans &trans &trans &trans
+			&none &kp C_BRI_UP &trans     &trans   &trans        &trans     &trans       &trans &soft_off    &trans &trans &trans &trans &trans
+			&none &kp C_BRI_DN &kp HOME   &kp UP   &kp PAGE_UP   &trans     &trans       &trans &trans       &trans &trans &trans &trans &trans
+			&none &kp VOLU     &kp LEFT   &kp DOWN &kp RIGHT     &trans     &trans       &trans &trans       &trans &trans &trans &trans &trans
 			&none &kp VOLD     &kp END    &trans   &kp PAGE_DOWN &trans     &trans       &none  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
 			&none &trans       &kp K_PREV &kp K_PP &kp K_STOP    &kp K_NEXT &trans       &none  &msc SCRL_UP &msc SCRL_DOWN &trans &none  &trans &bt BT_CLR_ALL
 			>;
