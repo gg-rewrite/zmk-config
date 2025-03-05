@@ -4,7 +4,7 @@
 
 #include "magpie_5.dtsi"
 #include "trackball-3610.dtsi"
-//#include "trackball-3360.dtsi"
+/* #include "trackball-3360.dtsi" */
 #include <dt-bindings/zmk/mouse.h>
 
 &default_transform {
