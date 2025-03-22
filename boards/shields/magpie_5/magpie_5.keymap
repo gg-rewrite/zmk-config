@@ -13,6 +13,8 @@
 #define NUFU  1
 #define NAV   2
 #define MACRO 3
+#define SNIPE 4
+#define SCROLL 5
 
 &sl {
 	release-after-ms = <250>;
@@ -48,11 +50,11 @@
 
 		Base {
 			bindings = <
-			&none &kp  ESC   &kp N1   &kp N2    &kp N3   &kp N4   &kp N5      &mkp LCLK  &kp N6        &kp N7   &kp N8    &kp N9    &kp N0        &kp BACKSPACE
-			&none &kp  TAB   &kp Q    &kp W     &kp E    &kp R    &kp T       &mkp RCLK  &kp Y         &kp U    &kp I     &kp O     &kp P         &kp BSLH
-			&none &kp  LSHFT &kp A    &kp S     &kp D    &kp F    &kp G       &mkp MCLK  &kp H         &kp J    &kp K     &kp L     &kp SEMICOLON &kp APOS
-			&none &kp  LCTRL &kp Z    &kp X     &kp C    &kp V    &kp B       &tog MACRO &kp N         &kp M    &kp COMMA &kp DOT   &kp SLASH     &kp ENTER
-			&none &mo NAV   &kp CAPS &kp GRAVE &kp LALT &sk LGUI &kp SPACE   &none      &lt NUFU RALT &kp LBKT &kp RBKT  &kp TILDE &mo NAV       &soft_off
+			&none &kp ESC   &kp N1     &kp N2    &kp N3   &kp N4   &kp N5      &mkp LCLK  &kp N6        &kp N7   &kp N8    &kp N9    &kp N0        &kp BACKSPACE
+			&none &kp TAB   &kp Q      &kp W     &kp E    &kp R    &kp T       &mkp RCLK  &kp Y         &kp U    &kp I     &kp O     &kp P         &kp BSLH
+			&none &kp LSHFT &kp A      &kp S     &kp D    &kp F    &kp G       &mkp MCLK  &kp H         &kp J    &kp K     &kp L     &kp SEMICOLON &kp APOS
+			&none &kp LCTRL &kp Z      &kp X     &kp C    &kp V    &kp B       &tog MACRO &kp N         &kp M    &kp COMMA &kp DOT   &kp SLASH     &kp ENTER
+			&none &mo SNIPE &mo SCROLL &kp GRAVE &kp LALT &sk LGUI &kp SPACE   &none      &lt NUFU RALT &kp LBKT &kp RBKT  &kp TILDE &mo NAV       &soft_off
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
 		};
@@ -63,7 +65,7 @@
 			&none &kp ESC &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &trans &kp CARET &kp AMPS  &kp STAR        &kp LPAR &kp RPAR   &kp MINUS
 			&none &trans  &kp N1   &kp N2 &kp N3   &kp N4   &kp N5      &trans &kp N6    &kp N7    &kp N8          &kp N9   &kp N0     &kp EQUAL
 			&none &trans  &kp F1   &kp F2 &kp F3   &kp F4   &kp F5      &none  &kp F6    &kp F7    &kp F8          &kp F9   &kp F10    &kp PLUS
-			&none &trans  &kp F12  &none  &trans   &trans   &kp DOT     &none  &trans    &trans    &trans          &none    &kp F11    &kp UNDER
+			&none &trans  &kp F12  &none  &trans   &kp CAPS &kp DOT     &none  &trans    &trans    &trans          &none    &kp F11    &kp UNDER
 			>;
 		};
 		
@@ -73,7 +75,7 @@
 			&none &trans &kp HOME &kp UP   &kp PAGE_UP   &kp K_PREV   &kp K_NEXT  &trans &mkp LCLK      &mkp RCLK      &mkp MCLK    &trans          &trans &trans
 			&none &trans &kp LEFT &kp DOWN &kp RIGHT     &kp K_PP     &kp K_STOP  &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans &bt BT_CLR
 			&none &trans &kp END  &trans   &kp PAGE_DOWN &trans       &trans      &none  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4 &trans
-			&none &trans &kp VOLD &kp VOLU &trans        &trans       &trans      &none  &msc SCRL_UP   &msc SCRL_DOWN &trans &none &trans &bt BT_CLR_ALL
+			&none &trans &kp VOLD &kp VOLU &trans        &trans       &trans      &none  &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &trans &bt BT_CLR_ALL
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
 		};
@@ -85,6 +87,26 @@
 			&none &none &none &none &none &none &none   &none  &kp F18 &kp K_EXEC &kp KP_N3  &kp KP_N4    &kp KP_N6       &kp KP_EQUAL
 			&none &none &none &none &none &none &none   &trans &kp F20 &kp F21    &kp KP_N1  &kp KP_N2    &kp KP_N3       &kp KP_ENTER
 			&none &none &none &none &none &none &none   &none  &kp F22 &kp F23    &kp K_HELP &kp KP_N0    &kp KP_DOT      &kp K_APP
+			>;
+		};
+		
+		Snipe {
+			bindings = <
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			>;
+		};
+		
+		Scroll {
+			bindings = <
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
+			&trans &trans &trans &trans &trans &trans &trans   &trans  &trans &trans &trans &trans &trans &trans
 			>;
 		};
 	};
