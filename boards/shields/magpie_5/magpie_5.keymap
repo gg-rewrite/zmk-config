@@ -9,13 +9,61 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors/mouse_keys.dtsi>
 
-#define BASE  0
-#define NUFU  1
-#define NAV   2
-#define MACRO 3
-#define SNIPE 4
-#define SCROLL 5
-#define NUFU2  6
+#define BASE 0
+#define NUFU 1
+#define NAV  2
+#define MACR 3
+#define SNIP 4
+#define SCRL 5
+#define NUF2 6
+
+//Shortened key definitions
+#define NF1 &lt NUFU RALT
+#define NF2 &lt NUF2 LBKT
+#define sft &soft_off
+
+#define mlft &mmv MOVE_LEFT
+#define mrgt &mmv MOVE_RIGHT
+#define mup  &mmv MOVE_UP
+#define mdwn &mmv MOVE_DOWN
+#define btclr &bt BT_CLR
+#define btcall &bt BT_CLR_ALL
+
+#define bt0 &bt BT_SEL 0
+#define bt1 &bt BT_SEL 1
+#define bt2 &bt BT_SEL 2
+#define bt3 &bt BT_SEL 3
+#define bt4 &bt BT_SEL 4
+
+#define mscup &msc SCRL_UP
+#define mscdn &msc SCRL_DOWN
+#define msclft &msc SCRL_LEFT
+#define mscrgt &msc SCRL_RIGHT
+
+#define BCKP BACKSPACE
+#define DELT DELETE
+#define SMCL SEMICOLON
+#define COMM COMMA
+#define SLSH SLASH
+#define ENTR ENTER
+#define GRV GRAVE
+#define SPCE SPACE
+
+#define PRCN PRCNT
+#define CART CARET
+#define MINS MINUS
+#define EQUL EQUAL
+#define UNDR UNDER
+
+#define PEUP PAGE_UP
+#define PEDN PAGE_DOWN
+#define PREV K_PREV
+#define NEXT K_NEXT
+#define RGHT RIGHT
+#define STOP C_STOP
+
+#define BRDN C_BRI_DEC
+#define BRUP C_BRI_INC
 
 &sl {
 	release-after-ms = <250>;
@@ -43,32 +91,32 @@
 
 		Base {
 			bindings = <
-			&none &kp ESC   &kp N1     &kp N2    &kp N3   &kp N4   &kp N5      &mkp LCLK  &kp N6        &kp N7         &kp N8    &kp N9    &kp N0        &kp BACKSPACE
-			&none &kp TAB   &kp Q      &kp W     &kp E    &kp R    &kp T       &mkp RCLK  &kp Y         &kp U          &kp I     &kp O     &kp P         &kp BSLH
-			&none &kp LSHFT &kp A      &kp S     &kp D    &kp F    &kp G       &mkp MCLK  &kp H         &kp J          &kp K     &kp L     &kp SEMICOLON &kp APOS
-			&none &kp LCTRL &kp Z      &kp X     &kp C    &kp V    &kp B       &tog MACRO &kp N         &kp M          &kp COMMA &kp DOT   &kp SLASH     &kp ENTER
-			&none &mo SNIPE &mo SCROLL &kp GRAVE &kp LALT &sk LGUI &kp SPACE   &none      &lt NUFU RALT &lt NUFU2 LBKT &kp RBKT  &soft_off &mo NAV       &trans
+			&none &kp ESC   &kp N1   &kp N2    &kp N3   &kp N4   &kp N5      &mkp LCLK  &kp N6 &kp N7 &kp N8   &kp N9  &kp N0   &kp BCKP
+			&none &kp TAB   &kp Q    &kp W     &kp E    &kp R    &kp T       &mkp RCLK  &kp Y  &kp U  &kp I    &kp O   &kp P    &kp BSLH
+			&none &kp LSHFT &kp A    &kp S     &kp D    &kp F    &kp G       &mkp MCLK  &kp H  &kp J  &kp K    &kp L   &kp SMCL &kp APOS
+			&none &kp LCTRL &kp Z    &kp X     &kp C    &kp V    &kp B       &tog MACR  &kp N  &kp M  &kp COMM &kp DOT &kp SLSH &kp ENTR
+			&none &mo SNIP  &mo SCRL &kp GRV   &kp LALT &sk LGUI &kp SPCE    &none      NF1    NF2    &kp RBKT sft     &mo NAV  &trans
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
 		};
 		
 		NuFu {
 			bindings = <
-			&none &trans  &trans   &trans &trans   &trans   &trans      &trans &trans    &kp PSCRN &kp PAUSE_BREAK &kp SLCK &kp INSERT &kp DELETE
-			&none &kp ESC &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &trans &kp CARET &kp AMPS  &kp STAR        &kp LPAR &kp RPAR   &kp MINUS
-			&none &trans  &kp N1   &kp N2 &kp N3   &kp N4   &kp N5      &trans &kp N6    &kp N7    &kp N8          &kp N9   &kp N0     &kp EQUAL
-			&none &trans  &kp F1   &kp F2 &kp F3   &kp F4   &kp F5      &none  &kp F6    &kp F7    &kp F8          &kp F9   &kp F10    &kp PLUS
-			&none &trans  &kp F12  &none  &trans   &kp CAPS &kp DOT     &none  &trans    &trans    &trans          &none    &kp F11    &kp UNDER
+			&none &trans  &trans   &trans &trans   &trans   &trans     &trans &trans   &trans    &trans   &trans   &trans   &trans
+			&none &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCN   &trans &kp CART &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp MINS
+			&none &trans  &kp N1   &kp N2 &kp N3   &kp N4   &kp N5     &trans &kp N6   &kp N7    &kp N8   &kp N9   &kp N0   &kp EQUL
+			&none &trans  &kp F1   &kp F2 &kp F3   &kp F4   &kp F5     &none  &kp F6   &kp F7    &kp F8   &kp F9   &kp F10  &kp PLUS
+			&none &trans  &kp F12  &trans &trans   &kp CAPS &kp DOT    &none  &trans   &trans    &trans   &none    &kp F11  &kp UNDR
 			>;
 		};
 		
 		Nav {
 			bindings = <
-			&none &trans &trans   &trans   &trans        &trans         &trans        &trans &trans         &trans         &trans       &trans          &trans &trans
-			&none &trans &kp HOME &kp UP   &kp PAGE_UP   &kp K_PREV     &kp K_NEXT    &trans &mkp LCLK      &mkp RCLK      &mkp MCLK    &trans          &trans &trans
-			&none &trans &kp LEFT &kp DOWN &kp RIGHT     &kp K_PP       &kp C_STOP    &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans &bt BT_CLR
-			&none &trans &kp END  &trans   &kp PAGE_DOWN &kp C_BRI_DEC &kp C_BRI_INC  &none  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4 &trans
-			&none &trans &kp VOLD &kp VOLU &trans        &kp VOLD       &kp VOLU      &none  &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &trans &bt BT_CLR_ALL
+			&none &trans &trans   &trans   &trans   &trans   &trans    &trans &trans    &trans    &trans    &trans &trans &trans
+			&none &trans &kp HOME &kp UP   &kp PEUP &kp PREV &kp NEXT  &trans &mkp LCLK &mkp RCLK &mkp MCLK &trans &trans &trans
+			&none &trans &kp LEFT &kp DOWN &kp RGHT &kp K_PP &kp STOP  &trans mlft      mdwn      mup       mrgt   &trans btclr
+			&none &trans &kp END  &trans   &kp PEDN &kp BRDN &kp BRUP  &none  bt0       bt1       bt2       bt3    bt4    &trans
+			&none &trans &trans   &trans   &trans   &kp VOLD &kp VOLU  &none  msclft    mscdn     mscup     mscrgt &trans btcall
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
 		};
@@ -105,11 +153,11 @@
 		
 		Nufu2 {
 			bindings = <
-			&trans &trans &trans &trans &trans     &trans        &trans     &trans     &trans          &trans   &trans     &trans &trans &trans
-			&trans &trans &trans &trans &trans     &trans        &kp GRAVE  &kp PSCRN  &kp PAUSE_BREAK &kp SLCK &kp INSERT &trans &trans &trans
-			&trans &trans &trans &trans &trans     &trans        &kp TILDE  &trans     &trans &trans   &trans   &trans     &trans &trans
-			&trans &trans &trans &trans &trans     &trans        &trans     &trans     &trans &trans   &trans   &trans     &trans &trans
-			&trans &trans &trans &trans &kp DELETE &kp BACKSPACE &trans     &trans     &trans &trans   &trans   &trans     &trans &trans
+			&trans &trans &trans &trans &trans   &trans   &trans     &trans     &trans          &trans   &trans     &trans &trans &trans
+			&trans &trans &trans &trans &trans   &trans   &kp GRAVE  &kp PSCRN  &kp PAUSE_BREAK &kp SLCK &kp INSERT &trans &trans &trans
+			&trans &trans &trans &trans &trans   &trans   &kp TILDE  &trans     &trans          &trans   &trans     &trans &trans &trans
+			&trans &trans &trans &trans &trans   &trans   &trans     &trans     &trans          &trans   &trans     &trans &trans &trans
+			&trans &trans &trans &trans &kp DELT &kp BCKP &kp ESC    &trans     &trans          &trans   &trans     &trans &trans &trans
 			>;
 		};
 	};
