@@ -85,6 +85,15 @@
 };
 
 / {
+	combos
+	{
+		compatible = "zmk,combos";
+		combo_enter {
+			timeout-ms = <50>;
+			key-positions = <62 64>;
+			bindings = <&kp ENTER>;
+		};
+	};
 	
 	keymap {
 		compatible = "zmk,keymap";
@@ -153,11 +162,11 @@
 		
 		Nufu2 {
 			bindings = <
-			&trans &trans &trans &trans &trans   &trans   &trans     &trans     &trans          &trans   &trans     &trans &trans &trans
-			&trans &trans &trans &trans &trans   &trans   &kp GRAVE  &kp PSCRN  &kp PAUSE_BREAK &kp SLCK &kp INSERT &trans &trans &trans
-			&trans &trans &trans &trans &trans   &trans   &kp TILDE  &trans     &trans          &trans   &trans     &trans &trans &trans
-			&trans &trans &trans &trans &trans   &trans   &trans     &trans     &trans          &trans   &trans     &trans &trans &trans
-			&trans &trans &trans &trans &kp DELT &kp BCKP &kp ESC    &trans     &trans          &trans   &trans     &trans &trans &trans
+			&trans &trans &trans   &trans   &trans   &trans   &trans     &trans     &trans          &trans   &trans     &trans &trans &trans
+			&trans &trans &trans   &trans   &trans   &trans   &kp GRAVE  &kp PSCRN  &kp PAUSE_BREAK &kp SLCK &kp INSERT &trans &trans &trans
+			&trans &trans &kp MINS &kp EQUL &kp PLUS &kp UNDR &kp TILDE  &trans     &trans          &trans   &trans     &trans &trans &trans
+			&trans &trans &trans   &trans   &trans   &trans   &trans     &trans     &trans          &trans   &trans     &trans &trans &trans
+			&trans &trans &trans   &trans   &kp DELT &kp BCKP &kp ESC    &trans     &trans          &trans   &trans     &trans &trans &trans
 			>;
 		};
 	};
