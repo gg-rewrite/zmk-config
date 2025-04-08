@@ -47,7 +47,7 @@
 			&none &kp TAB   &kp Q      &kp W     &kp E    &kp R    &kp T       &mkp RCLK  &kp Y         &kp U          &kp I     &kp O     &kp P         &kp BSLH
 			&none &kp LSHFT &kp A      &kp S     &kp D    &kp F    &kp G       &mkp MCLK  &kp H         &kp J          &kp K     &kp L     &kp SEMICOLON &kp APOS
 			&none &kp LCTRL &kp Z      &kp X     &kp C    &kp V    &kp B       &tog MACRO &kp N         &kp M          &kp COMMA &kp DOT   &kp SLASH     &kp ENTER
-			&none &mo SNIPE &mo SCROLL &kp GRAVE &kp LALT &sk LGUI &kp SPACE   &none      &lt NUFU RALT &lt NUFU2 LBKT &kp RBKT  &none     &mo NAV       &soft_off
+			&none &mo SNIPE &mo SCROLL &kp GRAVE &kp LALT &sk LGUI &kp SPACE   &none      &lt NUFU RALT &lt NUFU2 LBKT &kp RBKT  &soft_off &mo NAV       &trans
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
 		};
@@ -64,11 +64,11 @@
 		
 		Nav {
 			bindings = <
-			&none &trans &trans   &trans   &trans        &trans       &trans      &trans &trans         &trans         &trans       &trans          &trans &trans
-			&none &trans &kp HOME &kp UP   &kp PAGE_UP   &kp K_PREV   &kp K_NEXT  &trans &mkp LCLK      &mkp RCLK      &mkp MCLK    &trans          &trans &trans
-			&none &trans &kp LEFT &kp DOWN &kp RIGHT     &kp K_PP     &kp C_STOP  &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans &bt BT_CLR
-			&none &trans &kp END  &trans   &kp PAGE_DOWN &trans       &trans      &none  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4 &trans
-			&none &trans &kp VOLD &kp VOLU &trans        &trans       &trans      &none  &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &trans &bt BT_CLR_ALL
+			&none &trans &trans   &trans   &trans        &trans         &trans        &trans &trans         &trans         &trans       &trans          &trans &trans
+			&none &trans &kp HOME &kp UP   &kp PAGE_UP   &kp K_PREV     &kp K_NEXT    &trans &mkp LCLK      &mkp RCLK      &mkp MCLK    &trans          &trans &trans
+			&none &trans &kp LEFT &kp DOWN &kp RIGHT     &kp K_PP       &kp C_STOP    &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans &bt BT_CLR
+			&none &trans &kp END  &trans   &kp PAGE_DOWN &kp C_BRI_DEC &kp C_BRI_INC  &none  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3    &bt BT_SEL 4 &trans
+			&none &trans &kp VOLD &kp VOLU &trans        &kp VOLD       &kp VOLU      &none  &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &trans &bt BT_CLR_ALL
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
 		};
@@ -105,11 +105,11 @@
 		
 		Nufu2 {
 			bindings = <
-			&trans &trans &trans &trans &trans &trans &trans     &trans  &trans &trans &trans &trans &trans &trans
-			&trans &trans &trans &trans &trans &trans &kp GRAVE  &trans  &trans &trans &trans &trans &trans &trans
-			&trans &trans &trans &trans &trans &trans &kp TILDE  &trans  &trans &trans &trans &trans &trans &trans
-			&trans &trans &trans &trans &trans &trans &trans     &trans  &trans &trans &trans &trans &trans &trans
-			&trans &trans &trans &trans &trans &trans &trans     &trans  &trans &trans &trans &trans &trans &kp BACKSPACE
+			&trans &trans &trans &trans &trans     &trans        &trans     &trans     &trans          &trans   &trans     &trans &trans &trans
+			&trans &trans &trans &trans &trans     &trans        &kp GRAVE  &kp PSCRN  &kp PAUSE_BREAK &kp SLCK &kp INSERT &trans &trans &trans
+			&trans &trans &trans &trans &trans     &trans        &kp TILDE  &trans     &trans &trans   &trans   &trans     &trans &trans
+			&trans &trans &trans &trans &trans     &trans        &trans     &trans     &trans &trans   &trans   &trans     &trans &trans
+			&trans &trans &trans &trans &kp DELETE &kp BACKSPACE &trans     &trans     &trans &trans   &trans   &trans     &trans &trans
 			>;
 		};
 	};
