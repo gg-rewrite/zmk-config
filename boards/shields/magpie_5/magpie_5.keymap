@@ -93,6 +93,11 @@
 			key-positions = <62 64>;
 			bindings = <&kp ENTER>;
 		};
+		combo_alt_enter {
+			timeout-ms = <50>;
+			key-positions = <60 64>;
+			bindings = <&kp LA(ENTER)>;
+		};
 	};
 	
 	keymap {
