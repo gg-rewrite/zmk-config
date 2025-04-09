@@ -98,6 +98,11 @@
 			key-positions = <60 64>;
 			bindings = <&kp LA(ENTER)>;
 		};
+		combo_soft_off {
+			timeout-ms = <50>;
+			key-positions = <59 67>;
+			bindings = <&soft_off>;
+		};
 	};
 	
 	keymap {
@@ -105,11 +110,11 @@
 
 		Base {
 			bindings = <
-			&none &kp ESC   &kp N1   &kp N2    &kp N3   &kp N4   &kp N5      &mkp LCLK  &kp N6 &kp N7 &kp N8   &kp N9  &kp N0   &kp BCKP
-			&none &kp TAB   &kp Q    &kp W     &kp E    &kp R    &kp T       &mkp RCLK  &kp Y  &kp U  &kp I    &kp O   &kp P    &kp BSLH
-			&none &kp LSHFT &kp A    &kp S     &kp D    &kp F    &kp G       &mkp MCLK  &kp H  &kp J  &kp K    &kp L   &kp SMCL &kp APOS
-			&none &kp LCTRL &kp Z    &kp X     &kp C    &kp V    &kp B       &tog MACR  &kp N  &kp M  &kp COMM &kp DOT &kp SLSH &kp ENTR
-			&none &mo SNIP  &mo SCRL &kp GRV   &kp LALT &sk LGUI &kp SPCE    &none      NF1    NF2    &kp RBKT sft     &mo NAV  &trans
+			&none &kp ESC   &kp N1   &kp N2    &kp N3   &kp N4   &kp N5      &mkp LCLK &kp N6 &kp N7 &kp N8   &kp N9  &kp N0   &kp BCKP
+			&none &kp TAB   &kp Q    &kp W     &kp E    &kp R    &kp T       &mkp RCLK &kp Y  &kp U  &kp I    &kp O   &kp P    &trans
+			&none &kp LSHFT &kp A    &kp S     &kp D    &kp F    &kp G       &mkp MCLK &kp H  &kp J  &kp K    &kp L   &kp SMCL &trans
+			&none &kp LCTRL &kp Z    &kp X     &kp C    &kp V    &kp B       &tog MACR &kp N  &kp M  &kp COMM &kp DOT &kp SLSH &trans
+			&none &mo SNIP  &mo SCRL &trans   &kp LALT &sk LGUI &kp SPCE    &none     NF1    NF2    &kp RBKT  &trans  &mo NAV  &trans
 			>;
 			sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
 		};
