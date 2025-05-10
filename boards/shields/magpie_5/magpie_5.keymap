@@ -103,6 +103,21 @@
 			key-positions = <33 37>;
 			bindings = <&kp TAB>;
 		};
+		combo_ctrl {
+			timeout-ms = <50>;
+			key-positions = <30 40>;
+			bindings = <&sk LCTRL>;
+		};
+		combo_shift {
+			timeout-ms = <50>;
+			key-positions = <31 39>;
+			bindings = <&sk LSHFT>;
+		};
+		combo_alt {
+			timeout-ms = <50>;
+			key-positions = <32 38>;
+			bindings = <&sk LALT>;
+		};
 	};
 	
 	keymap {
